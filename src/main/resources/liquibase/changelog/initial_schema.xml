@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="1" author="Nanugonda">
+    <comment>Create client table</comment>
+    <createTable tableName="client">
+      <column name="id" type="bigserial" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="date_created" type="timestamp"/>
+      <column name="date_modified" type="timestamp"/>
+      <column name="client_account" type="bigserial"/>
+      <column name="username" type="varchar(255)"/>
+      <column name="password" type="varchar(255)"/>
+      <column name="status" type="varchar(10)"/>
+      <column name="first_name" type="varchar(255)"/>
+      <column name="middle_name" type="varchar(255)"/>
+      <column name="last_name" type="varchar(255)"/>
+      <column name="gender" type="varchar(10)"/>
+      <column name="phone" type="varchar(15)"/>
+      <column name="email" type="varchar(255)">
+        <constraints unique="true"/>
+      </column>
+      <column name="address_line1" type="varchar(255)"/>
+      <column name="address_line2" type="varchar(255)"/>
+      <column name="address_line3" type="varchar(255)"/>
+      <column name="city" type="varchar(50)"/>
+      <column name="state" type="varchar(50)"/>
+      <column name="country" type="varchar(50)"/>
+      <column name="zipcode" type="int"/>
+      <column name="height" type="double precision"/>
+      <column name="weight" type="double precision"/>
+      <column name="lat_long" type="varchar(255)"/>
+      <column name="token" type="varchar(255)">
+        <constraints unique="true"/>
+      </column>
+      <column name="expiry" type="timestamp"/>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="3" author="Nanugonda">
+    <comment>Create provider table</comment>
+    <createTable tableName="provider">
+      <column name="id" type="bigserial" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="date_created" type="timestamp"/>
+      <column name="date_modified" type="timestamp"/>
+      <column name="provider_account" type="bigserial"/>
+      <column name="username" type="varchar(255)"/>
+      <column name="password" type="varchar(255)"/>
+      <column name="status" type="varchar(10)"/>
+      <column name="organization" type="varchar(255)"/>
+      <column name="first_name" type="varchar(255)"/>
+      <column name="middle_name" type="varchar(255)"/>
+      <column name="last_name" type="varchar(255)"/>
+      <column name="phone" type="varchar(15)"/>
+      <column name="email" type="varchar(255)">
+        <constraints unique="true"/>
+      </column>
+      <column name="address_line1" type="varchar(255)"/>
+      <column name="address_line2" type="varchar(255)"/>
+      <column name="address_line3" type="varchar(255)"/>
+      <column name="city" type="varchar(50)"/>
+      <column name="state" type="varchar(50)"/>
+      <column name="country" type="varchar(50)"/>
+      <column name="zipcode" type="int"/>
+      <column name="description" type="varchar(255)"/>
+      <column name="lat_long" type="varchar(255)"/>
+      <column name="token" type="varchar(255)">
+        <constraints unique="true"/>
+      </column>
+      <column name="expiry" type="timestamp"/>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="4" author="Nanugonda">
+    <comment>Create state table</comment>
+    <createTable tableName="state">
+      <column name="id" type="serial" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="date_created" type="timestamp"/>
+      <column name="date_modified" type="timestamp"/>
+      <column name="name" type="varchar(255)"/>
+      <column name="country_id" type="serial"/>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="5" author="Nanugonda">
+    <comment>Create country table</comment>
+    <createTable tableName="country">
+      <column name="id" type="serial" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="date_created" type="timestamp"/>
+      <column name="date_modified" type="timestamp"/>
+      <column name="name" type="varchar(255)"/>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="6" author="Nanugonda">
+    <comment>Create facility table</comment>
+    <createTable tableName="facility">
+      <column name="id" type="bigserial" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="date_created" type="timestamp"/>
+      <column name="date_modified" type="timestamp"/>
+      <column name="name" type="varchar(255)"/>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="7" author="Nanugonda">
+    <comment>Create provider facility junction table</comment>
+    <createTable tableName="provider_facility">
+      <column name="id" type="bigserial" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="date_created" type="timestamp"/>
+      <column name="date_modified" type="timestamp"/>
+      <column name="provider_id" type="bigserial">
+        <constraints nullable="false"/>
+      </column>
+      <column name="facility_id" type="bigserial">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="8" author="Nanugonda">
+    <comment>Create trainer table</comment>
+    <createTable tableName="trainer">
+      <column name="id" type="bigserial" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="date_created" type="timestamp"/>
+      <column name="date_modified" type="timestamp"/>
+      <column name="name" type="varchar(255)"/>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="9" author="Nanugonda">
+    <comment>Add foreign key</comment>
+    <addForeignKeyConstraint baseTableName="state"
+      baseColumnNames="country_id"
+      constraintName="fk_state_country_id"
+      referencedTableName="country"
+      referencedColumnNames="id"/>
+  </changeSet>
+
+  <changeSet id="10" author="Nanugonda">
+    <comment>Add foreign key</comment>
+    <addForeignKeyConstraint baseTableName="provider_facility"
+      baseColumnNames="provider_id"
+      constraintName="fk_provider_facility_provider_id"
+      referencedTableName="provider"
+      referencedColumnNames="id"/>
+  </changeSet>
+
+  <changeSet id="11" author="Nanugonda">
+    <comment>Add foreign key</comment>
+    <addForeignKeyConstraint baseTableName="provider_facility"
+      baseColumnNames="facility_id"
+      constraintName="fk_provider_facility_facility_id"
+      referencedTableName="facility"
+      referencedColumnNames="id"/>
+  </changeSet>
+
+</databaseChangeLog>

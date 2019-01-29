@@ -1,0 +1,22 @@
+{
+  "name": "",
+  "phone": "",
+  "email": "",
+  "address_line1": "",
+  "address_line2": "",
+  "address_line3": "",
+  "city": "",
+  "state": "",
+  "country": "",
+  "zipcode": "",
+  "description": "",
+  "latitude_longitude": "",
+  "facilities": [
+    "",
+    ""
+  ],
+  "trainers": [
+    "",
+    ""
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Andhra Pradesh",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "id": 2,
+    "name": "Telangana",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "id": 3,
+    "name": "Karnataka",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "id": 4,
+    "name": "Tamilnadu",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "id": 5,
+    "name": "Maharastra",
+    "country_id": 1,
+    "country_name": "India"
+  }
+]

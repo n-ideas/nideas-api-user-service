@@ -1,0 +1,18 @@
+{
+  "name": "provider_1",
+  "phone": "phone_1",
+  "email": "email_1",
+  "address_line1": "address1_1",
+  "address_line2": "address1_2",
+  "address_line3": "address1_3",
+  "city": "city_1",
+  "state": "state_1",
+  "country": "country_1",
+  "zip_code": 123123,
+  "description": "description_1",
+  "latitude_longitude": "latLong_1",
+  "facilities": [
+    "facility_1",
+    "facility_2"
+  ]
+}

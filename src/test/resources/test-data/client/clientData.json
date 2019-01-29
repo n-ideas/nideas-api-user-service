@@ -1,0 +1,17 @@
+{
+  "username": "username",
+  "first_name": "first name",
+  "middle_name": "middle name",
+  "last_name": "last name",
+  "gender": "Male",
+  "phone": "123456789",
+  "email": "user@gmail.com",
+  "address_1": "address_1",
+  "address_2": "address_2",
+  "address_3": "address_3",
+  "city": "city",
+  "state": "state",
+  "country": "country",
+  "zip_code": 123456,
+  "latitude_longitude": "latLong"
+}
