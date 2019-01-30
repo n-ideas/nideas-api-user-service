@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.nideas.api</groupId>
-  <artifactId>user-service</artifactId>
+  <artifactId>nideas-api-user-service</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>user-service</name>
+  <name>nideas-api-user-service</name>
   <description>User service app</description>
 
   <parent>
@@ -194,6 +194,7 @@
   </dependencies>
 
   <build>
+    <finalName>nideas-api-user-service</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
